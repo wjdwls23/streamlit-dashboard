@@ -12,7 +12,7 @@ st.set_page_config(layout='wide')
 
 # ======= basic df ===========
 def load_data():
-    df_basic = pd.read_csv("/Users/t2023-m0033/Desktop/내일배움캠프/최종프로젝트/streamlit/df_open.csv")
+    df_basic = pd.read_csv("df_open.csv")
     df_basic['시작시간'] = pd.to_datetime(df_basic['시작시간'])
     df_basic['방송시'] = df_basic['시작시간'].dt.hour
     df_basic['방송일'] = df_basic['시작시간'].dt.day
@@ -22,12 +22,12 @@ df_basic = load_data()
 
 # ====== plus df =========
 # 명서님
-plus_t = pd.read_csv('/Users/t2023-m0033/Desktop/내일배움캠프/최종프로젝트/streamlit/전체대분류_매출상위_분석.csv')
+plus_t = pd.read_csv('전체대분류_매출상위_분석.csv')
 # 민주님
-df_ad = pd.read_csv('/Users/t2023-m0033/Desktop/내일배움캠프/최종프로젝트/streamlit/광고상품ROI.csv')
+df_ad = pd.read_csv('광고상품ROI.csv')
 
 # 경민님
-open_df = pd.read_csv('/Users/t2023-m0033/Desktop/내일배움캠프/최종프로젝트/streamlit/open_df.csv', encoding='utf-8-sig')
+open_df = pd.read_csv('open_df.csv', encoding='utf-8-sig')
 # '가격 구간'을 원래의 순서로 카테고리형 변환
 price_order = [
     '0만원대', '10만원대', '20만원대', '30만원대', '40만원대', '50만원대', 
@@ -37,7 +37,7 @@ open_df['가격 구간'] = pd.Categorical(open_df['가격 구간'], categories=p
 open_df['라벨링'].fillna('', inplace=True)
 
 # ==================
-df = pd.read_csv('/Users/t2023-m0033/Desktop/내일배움캠프/최종프로젝트/streamlit/clustered_broadcast.csv')
+df = pd.read_csv('clustered_broadcast.csv')
 
 
 # ===================
